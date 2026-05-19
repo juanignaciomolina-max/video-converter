@@ -81,6 +81,10 @@
         <h2>Requisitos</h2>
         <p>Solo necesitás macOS y el contenido de esta carpeta. El instalador descarga <code>ffmpeg</code> automáticamente.</p>
 
+        <div class="tip">
+            <strong>Tip:</strong> Arrastrá la carpeta <code>video-converter-dist</code> a la barra lateral del Finder (debajo de <strong>Favoritos</strong>) para tener acceso rápido siempre.
+        </div>
+
         <h2>Instalación</h2>
 
         <div class="step">
@@ -99,7 +103,7 @@
                 <pre>cd ~/Desktop/video-converter-dist<br>bash setup.sh</pre>
                 <p>Si no sabés dónde está la carpeta, arrastrala desde Finder a la Terminal para escribir la ruta automáticamente.</p>
                 <div class="tip">
-                    <strong>¿Qué hace?</strong> El instalador descarga <code>ffmpeg</code> (el motor de conversión) desde internet. Solo se hace una vez. Si tenés Homebrew, también puede usar ese.
+                    <strong>¿Qué hace?</strong> El instalador descarga <code>ffmpeg</code> (el motor de conversión) desde internet. Solo se hace una vez.
                 </div>
             </div>
         </div>
@@ -109,46 +113,23 @@
         <div class="step">
             <div class="step-num">3</div>
             <div class="step-content">
-                <h3>Opción A: arrastrar y soltar</h3>
+                <h3>Arrastrá el video a la app</h3>
                 <p>Arrastrá cualquier video encima del icono de <strong>Convertir Video.app</strong>.</p>
                 <ul>
-                    <li>Se abre una ventana de Terminal</li>
-                    <li>Mostrará el progreso de la conversión</li>
-                    <li>Al terminar, presioná <strong>Enter</strong> para cerrar</li>
-                    <li>El video convertido se guarda en la misma carpeta del original con el sufijo <code>_h264</code></li>
+                    <li>Se abre una ventana de Terminal automáticamente</li>
+                    <li>Mostrará el progreso de la conversión en tiempo real</li>
+                    <li>Al terminar, presioná <strong>Enter</strong> para cerrar la ventana</li>
+                    <li>El video convertido se guarda en la misma carpeta del video original, con el sufijo <code>_h264</code></li>
                 </ul>
-            </div>
-        </div>
-
-        <div class="step">
-            <div class="step-num">4</div>
-            <div class="step-content">
-                <h3>Opción B: interfaz gráfica</h3>
-                <p>Hacé doble clic en <strong>Convertir Video.command</strong> (o <code>convertir_video.py</code>).</p>
-                <ul>
-                    <li>Se abre una ventana con selector de archivos</li>
-                    <li>Podés ajustar la calidad (CRF) y velocidad</li>
-                    <li>Barra de progreso y resultado al final</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="step">
-            <div class="step-num">5</div>
-            <div class="step-content">
-                <h3>Opción C: Terminal manual</h3>
-                <p>Arrastrá uno o más videos al archivo <code>convert.sh</code> en la Terminal:</p>
-                <pre>bash convert.sh ~/ruta/al/video.mp4</pre>
             </div>
         </div>
 
         <h2>Ajustes</h2>
-        <p>En la interfaz gráfica podés modificar:</p>
+        <p>Si querés cambiar la calidad por defecto, editá <code>convert.sh</code> con cualquier editor de texto y modificá estos valores:</p>
         <ul>
-            <li><strong>Calidad (CRF):</strong> 18 (máxima) a 30 (máxima compresión). Recomendado: 22.</li>
-            <li><strong>Velocidad:</strong> <code>medium</code> da buena compresión. <code>slow</code> comprime más pero tarda más.</li>
+            <li><strong>CRF:</strong> 18 (máxima calidad, archivo más grande) a 30 (máxima compresión). Valor recomendado: 22.</li>
+            <li><strong>PRESET:</strong> <code>medium</code> es un buen balance. <code>slow</code> comprime más pero tarda más en procesar.</li>
         </ul>
-        <p>Para cambios permanentes, editá <code>convert.sh</code> y modificá las variables <code>CRF</code> y <code>PRESET</code>.</p>
 
         <h2>Qué cambia</h2>
         <ul>
